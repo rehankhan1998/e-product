@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Products from "./component/Products";
 import Product from "./component/Product";
+import Login from "./component/Login";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/product/:id" element={<Product />} />
       </Routes>

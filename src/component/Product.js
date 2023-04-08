@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../redux/actions";
 import Skeleton from "react-loading-skeleton";
 import { NavLink, useParams } from "react-router-dom";
+import Products from "./Products";
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -63,7 +64,7 @@ function Product() {
           <p className="lead">{product.discription}</p>
           <button
             className="btn btn-outline-dark px-4 py-2"
-            onClick={() => addProduct(product)}
+            onClick={() => addProduct(Product)}
           >
             Add to Cart
           </button>

@@ -1,5 +1,7 @@
+import Products from "../../component/Products";
+
 const cart = [];
-const handleCart = (state = cart, action) => {
+export const handleCart = (state = cart, action) => {
   const product = action.payload;
   switch (action.type) {
     case "ADDITEM":
@@ -10,8 +12,9 @@ const handleCart = (state = cart, action) => {
         );
       } else {
         const product = action.payload;
-        return [...state, { ...payload, qty: 1 }];
+        return [...state, { ...product, qty: 1 }];
       }
+
       break;
     case "DELITEM":
       const exist1 = state.find((x) => x.id === product.id);
